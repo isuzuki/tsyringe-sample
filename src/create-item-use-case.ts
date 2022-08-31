@@ -10,7 +10,7 @@ type CreateItemInput = {
 @injectable()
 export class CreateItemUseCase {
   constructor(
-    @inject('ItemRepository')
+    @inject("ItemRepository")
     private readonly itemRepository: ItemRepository
   ) {}
 
