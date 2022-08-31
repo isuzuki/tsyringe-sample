@@ -1,9 +1,14 @@
 import { Item } from "./item"
 
-export class ItemRepository {
+export interface ItemRepository {
+  put(item: Item): void
+  findOneById(id: string): Item | undefined
+}
+
+export class InMemoryItemRepository {
   private entities: Map<string, Item> = new Map<string, Item>()
 
-  put(item: Item) {
+  put(item: Item): void {
     this.entities.set(item.id, item)
   }
 
