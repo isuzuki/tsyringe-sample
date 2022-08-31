@@ -1,11 +1,13 @@
 import { ItemRepository } from "./item-repository"
 import { Item } from "./item"
+import { injectable } from "tsyringe"
 
 type CreateItemInput = {
   name: string
   price: number
 }
 
+@injectable()
 export class CreateItemUseCase {
   constructor(
     private readonly itemRepository: ItemRepository
